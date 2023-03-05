@@ -11,11 +11,10 @@ public class ThirdThread {
         // 创建Callable对象
         // 先使用Lambda表达式创建Callable<Integer>对象
         // 使用FutureTask来包装Callable对象
-        FutureTask<Integer> task = new  FutureTask<Integer>((Callable<Integer>)() -> {
+        FutureTask<Integer> task = new FutureTask<>(() -> {
             int i = 0;
-            for ( ; i < 100 ; i++ )
-            {
-        System.out.println(Thread.currentThread().getName()
+            for (; i < 100; i++) {
+                System.out.println(Thread.currentThread().getName()
                         + " 的循环变量i的值：" + i);
             }
             // call()方法可以有返回值
